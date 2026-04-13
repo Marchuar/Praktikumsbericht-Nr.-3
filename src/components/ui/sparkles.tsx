@@ -102,7 +102,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 value: particleDensity || 120,
               },
               opacity: {
-                value: { min: 0.1, max: 1 },
+                value: { min: 0.2, max: 0.8 },
                 animation: {
                   enable: true,
                   speed: speed || 4,
@@ -116,6 +116,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 value: { min: minSize || 1, max: maxSize || 3 },
               },
               links: { enable: false },
+              shadow: { enable: false },
             },
             detectRetina: true,
           }}

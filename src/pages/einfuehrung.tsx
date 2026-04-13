@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SparklesCore } from "@/components/ui/sparkles";
 import { ShimmerText } from "@/components/ui/shimmer-text";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { PersonTabs, type ViewMode } from "@/components/ui/person-tabs";
@@ -101,23 +100,6 @@ export function EinfuehrungPage() {
     <>
       {/* Hero Section */}
       <section className="relative flex min-h-[85vh] w-full flex-col items-center justify-center">
-        {/* Sparkles background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <SparklesCore
-            id="hero-sparkles"
-            background="transparent"
-            minSize={0.4}
-            maxSize={1.2}
-            particleDensity={80}
-            className="h-full w-full"
-            particleColor="#6366f1"
-            speed={2}
-          />
-        </div>
-
-        {/* Gradient overlays */}
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-dark-900 via-transparent to-dark-900" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-dark-900 to-transparent" />
 
         {/* Hero content */}
         <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
