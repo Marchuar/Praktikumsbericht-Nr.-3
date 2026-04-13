@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-function FloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+function FloatingPaths({ position, count, opacity }: { position: number; count: number; opacity: number }) {
+  const paths = Array.from({ length: count }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
       380 - i * 5 * position
@@ -12,7 +13,7 @@ function FloatingPaths({ position }: { position: number }) {
     } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
       684 - i * 5 * position
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-    width: 0.4 + i * 0.025,
+    width: 0.3 + i * 0.02,
   }));
 
   return (
@@ -29,11 +30,11 @@ function FloatingPaths({ position }: { position: number }) {
             d={path.d}
             stroke="white"
             strokeWidth={path.width}
-            strokeOpacity={0.04 + path.id * 0.012}
+            strokeOpacity={(0.04 + path.id * 0.012) * opacity}
             initial={{ pathLength: 0.3, opacity: 0.4 }}
             animate={{
               pathLength: 1,
-              opacity: [0.2, 0.5, 0.2],
+              opacity: [0.2 * opacity, 0.5 * opacity, 0.2 * opacity],
               pathOffset: [0, 1, 0],
             }}
             transition={{
@@ -50,14 +51,26 @@ function FloatingPaths({ position }: { position: number }) {
 }
 
 export function BackgroundPaths() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const count = isMobile ? 16 : 36;
+  const opacity = isMobile ? 0.6 : 1;
+
   return (
     <div
       className="fixed inset-0 overflow-hidden pointer-events-none"
       style={{ zIndex: 0 }}
       aria-hidden="true"
     >
-      <FloatingPaths position={1} />
-      <FloatingPaths position={-1} />
+      <FloatingPaths position={1} count={count} opacity={opacity} />
+      <FloatingPaths position={-1} count={count} opacity={opacity} />
     </div>
   );
 }

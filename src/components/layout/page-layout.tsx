@@ -1,6 +1,6 @@
 import { Navbar } from "./navbar";
 import { Outlet, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { SparklesCore } from "@/components/ui/sparkles";
 
@@ -12,7 +12,20 @@ function ScrollToTop() {
   return null;
 }
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
+
 export function PageLayout() {
+  const isMobile = useIsMobile();
+
   return (
     <>
       <BackgroundPaths />
@@ -20,9 +33,10 @@ export function PageLayout() {
         <SparklesCore
           id="global-sparkles"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.6}
-          particleDensity={10}
+          minSize={isMobile ? 0.3 : 0.6}
+          maxSize={isMobile ? 0.8 : 1.6}
+          particleDensity={isMobile ? 5 : 10}
+
           className="h-full w-full"
           particleColor="#c7d2fe"
           speed={1.5}
