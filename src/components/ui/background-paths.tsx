@@ -30,7 +30,7 @@ function FloatingPaths({ position, count, opacity }: { position: number; count: 
             d={path.d}
             stroke="white"
             strokeWidth={path.width}
-            strokeOpacity={(0.04 + path.id * 0.012) * opacity}
+            strokeOpacity={(0.02 + path.id * 0.007) * opacity}
             initial={{ pathLength: 0.3, opacity: 0.4 }}
             animate={{
               pathLength: 1,
@@ -41,7 +41,7 @@ function FloatingPaths({ position, count, opacity }: { position: number; count: 
               duration: 20 + (path.id % 7) * 3,
               repeat: Number.POSITIVE_INFINITY,
               ease: "linear",
-              delay: path.id * 0.15,
+              delay: path.id * 0.04,
             }}
           />
         ))}
@@ -61,7 +61,7 @@ export function BackgroundPaths() {
   }, []);
 
   const count = isMobile ? 16 : 36;
-  const opacity = 1;
+  const opacity = isMobile ? 1.4 : 1;
 
   return (
     <div
