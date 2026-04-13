@@ -174,7 +174,7 @@ export const bohdanSections: Record<ContentKey, ContentBlock[]> = {
       title: "Frontend: HTML, CSS, JavaScript",
       text: "F\u00fcr den sichtbaren Teil der Website habe ich HTML, CSS und JavaScript verwendet. F\u00fcr die Datenspeicherung und die Benutzeranmeldung habe ich Firebase verwendet \u2014 eine Plattform von Google, die die Rolle eines Servers \u00fcbernimmt. Sie speichert alle Daten in der Cloud und kann \u00c4nderungen sofort an alle ge\u00f6ffneten Seiten weitergeben.",
       images: [
-        { src: "/Images/1firebaselogo.jpg", alt: "Firebase \u2014 Google-Plattform f\u00fcr Datenspeicherung in der Cloud" },
+        { src: "/Images/newFirebaselogo.png", alt: "Firebase \u2014 Google-Plattform f\u00fcr Datenspeicherung in der Cloud" },
       ],
     },
     {
