@@ -22,7 +22,7 @@ function FloatingPaths({ position, count, opacity }: { position: number; count: 
         className="w-full h-full"
         viewBox="0 0 696 316"
         fill="none"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="none"
       >
         {paths.map((path) => (
           <motion.path
@@ -61,7 +61,7 @@ export function BackgroundPaths() {
   }, []);
 
   const count = isMobile ? 16 : 36;
-  const opacity = isMobile ? 0.6 : 1;
+  const opacity = 1;
 
   return (
     <div
