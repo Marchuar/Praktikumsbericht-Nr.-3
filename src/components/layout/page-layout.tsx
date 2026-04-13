@@ -23,9 +23,9 @@ export function PageLayout() {
           width: "100%",
           maxWidth: "1200px",
           marginTop: "64px",
-          padding: "0 32px",
           flex: 1,
         }}
+        className="px-4 sm:px-8"
       >
         <Outlet />
       </main>

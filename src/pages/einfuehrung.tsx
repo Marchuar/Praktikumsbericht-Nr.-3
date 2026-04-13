@@ -131,7 +131,7 @@ export function EinfuehrungPage() {
           </motion.div>
 
           <ShimmerText
-            className="text-5xl md:text-7xl font-heading font-bold tracking-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold tracking-tight"
             variant="default"
             duration={2}
             delay={0.5}
