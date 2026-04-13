@@ -17,10 +17,10 @@ export function Navbar() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-glass-border bg-dark-900/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-8">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-8">
         <NavLink to="/" className="flex items-center gap-2.5 cursor-pointer shrink-0 mr-10">
           <FileText className="h-5 w-5 text-accent-indigo" />
-          <span className="font-heading font-semibold text-base text-text-primary">
+          <span className="font-heading font-semibold text-sm sm:text-base text-text-primary whitespace-nowrap">
             Praktikumsbericht
             <span className="text-accent-indigo ml-1">Nr. 3</span>
           </span>
