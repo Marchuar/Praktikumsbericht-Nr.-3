@@ -174,7 +174,7 @@ export const bohdanSections: Record<ContentKey, ContentBlock[]> = {
       title: "Frontend: HTML, CSS, JavaScript",
       text: "F\u00fcr den sichtbaren Teil der Website habe ich HTML, CSS und JavaScript verwendet. F\u00fcr die Datenspeicherung und die Benutzeranmeldung habe ich Firebase verwendet \u2014 eine Plattform von Google, die die Rolle eines Servers \u00fcbernimmt. Sie speichert alle Daten in der Cloud und kann \u00c4nderungen sofort an alle ge\u00f6ffneten Seiten weitergeben.",
       images: [
-        { src: "/Images/roomsFirebase.jpg", alt: "Firebase Firestore \u2014 Datenbankstruktur mit Rooms-Collection" },
+        { src: "/Images/1firebaselogo.jpg", alt: "Firebase \u2014 Google-Plattform f\u00fcr Datenspeicherung in der Cloud" },
       ],
     },
     {
@@ -214,7 +214,8 @@ export const bohdanSections: Record<ContentKey, ContentBlock[]> = {
       title: "\u00d6ffentliche Programmseite",
       text: "Die \u00f6ffentliche Programmseite zeigt alle Sessions in Echtzeit an. Ich habe zwei Anzeigevarianten umgesetzt \u2014 eine Tabellenansicht und eine einfache Listenansicht. W\u00e4hrend der Entwicklung habe ich das Design mehrmals \u00fcberarbeitet \u2014 die ersten Versionen sahen unordentlich aus.",
       images: [
-        { src: "/Images/whatusersees.jpg", alt: "BarCamp Programm \u2014 \u00f6ffentliche Ansicht mit Raumfilter" },
+        { src: "/Images/2opensite.jpg", alt: "BarCamp Programm \u2014 \u00f6ffentliche Ansicht mit Raumfilter" },
+        { src: "/Images/3Test1.jpg", alt: "Session-Details \u2014 Popup mit Informationen zur ausgew\u00e4hlten Session" },
       ],
     },
     {
